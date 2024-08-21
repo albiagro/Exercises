@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script>
+            let energyConsumption
+
+            while(true) { //iterate until the input is a number and I will exit through a "break", otherwise it will iterate in loop
+                const energyConsumptionInput = prompt("Please enter the energy consumption value in kWh")
+                if (!isNaN(energyConsumptionInput)) {energyConsumption = parseFloat(energyConsumptionInput); break;} //to be sure I convert the value to float and I exit from the function
+                else {alert("Please enter a valid number!")}
+            }
+                        
+            let distance
+
+            while(true) { //iterate until the input is a number and I will exit through a "break", otherwise it will iterate in loop
+                const distanceInput = prompt("Please enter the distance traveled by car in km")
+                if (!isNaN(distanceInput)) {distance = parseFloat(distanceInput); break;} //to be sure I convert the value to float and I exit from the function
+                else {alert("Please enter a valid number!")}
+            }
+
+            let otherEmissions = 0;
+
+            if (confirm('Do you wish to add other emissions?')) {
+                // Other emissions
+                while(true) { //iterate until the input is a number and I will exit through a "break", otherwise it will iterate in loop
+                    const otherEmissionsInput = prompt("Please enter other emissions")
+                    if (!isNaN(otherEmissionsInput)) {otherEmissions = parseFloat(otherEmissionsInput); break;} //to be sure I convert the value to float and I exit from the function
+                    else {alert("Please enter a valid number!")}
+                }
+            } else {
+             // Do nothing!
+                  console.log('No other emissions.');
+            }
+
+            function calculateEnergyEmissions(energyConsumption) { //multiplies the user input
+                return energyConsumption * 0.233
+            }
+
+            function calculateTravelEmissions(distance) { //multiplies the user input
+                return distance * 0.21
+            }
+
+            // store functions' result in variables
+            let energyEmissions = calculateEnergyEmissions(energyConsumption) 
+            let travelEmissions = calculateTravelEmissions(distance)
+            let totalEmissions = energyEmissions + travelEmissions + otherEmissions
+
+            // show results
+            console.log("Energy emissions: " + energyEmissions)
+            console.log("Travel emissions: " + travelEmissions)
+            console.log("Total emissions: " + totalEmissions)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
