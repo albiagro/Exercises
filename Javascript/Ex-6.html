@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            class Train {
+                constructor(name) {
+                    this.name = name;
+                    this.isRunning = false;
+                }
+
+                depart() {
+                    this.isRunning = true;
+                }
+
+                stop() {
+                    this.isRunning = false;
+                }                
+            }
+
+            let myTrain = new Train("Frecciarossa")
+            console.log(myTrain)
+
+            myTrain.depart()
+
+            console.log(myTrain)
+
+            myTrain.stop()
+
+            console.log(myTrain)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
